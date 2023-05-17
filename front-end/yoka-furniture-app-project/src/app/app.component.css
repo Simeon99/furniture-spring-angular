@@ -1,0 +1,32 @@
+/*.navbar.navbar-expand-xl{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #ebebeb;
+    
+    
+}
+.nav-link{
+    
+    color: black;
+    border-right: solid ;
+    border-right-width: 2px;
+    border-radius: 5px;
+    
+}
+.nav-link:hover{
+    animation-name: hpverlink ;
+    animation-duration: 1s ;
+}
+@keyframes hpverlink {
+   
+    100% {background-color: #ffffff;}
+  }
+.nav-item{
+    font-size: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+h1{
+    color: white;
+}*/
+

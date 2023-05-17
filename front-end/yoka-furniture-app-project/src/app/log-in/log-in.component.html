@@ -1,0 +1,51 @@
+<div class="d-flex justify-content-center">
+    <h1>Imate nalog?<br/> Ulogujte se!</h1><br/>
+    <div class="card " style="width: 18rem;">
+
+        <div class="card-body">
+            <h1 class="card-title">Sign up</h1>
+            <form>
+                <div class="form-group">
+                    <label for="email">Email adresa</label>
+                    <input type="text " #emailSignup class="form-control" id="email" aria-describedby="emailHelp"
+                        placeholder="Unesite email">
+                    
+                </div>
+                <div class="form-group">
+                    <label for="password">Lozinka</label>
+                    <input type="text " #passwordSignup class="form-control" id="password" placeholder="Lozinka">
+                </div>
+                
+                <button type="submit" class="btn btn-primary" (click)="onSignup(emailSignup.value, passwordSignup.value)">Sign up</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex justify-content-center">
+    <h1>Nemate nalog?<br/> Kreirajte nov nalog!</h1><br/>
+    <div class="card " style="width: 18rem;">
+
+        <div class="card-body">
+            <h1 class="card-title">Sign in</h1>
+            <form>
+                <div class="form-group">
+                    <label for="email">Email adresa</label>
+                    <input type="text " #email class="form-control" id="email" aria-describedby="emailHelp"
+                        placeholder="Unesite email">
+                    
+                </div>
+                <div class="form-group">
+                    <label for="password">Lozinka</label>
+                    <input type="text " #password class="form-control" id="password" placeholder="Lozinka">
+                </div>
+                
+                <button type="submit" class="btn btn-primary" (click)="onSignin(email.value, password.value)">Sing in</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<button *ngIf="isSignedIn" (click)="handleLogOut()">Log Out</button>
+
+<app-blog *ngIf="isSignedIn"></app-blog >

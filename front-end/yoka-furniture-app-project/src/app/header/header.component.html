@@ -1,0 +1,133 @@
+<!-- Navbar -->
+<!--
+<nav class="navbar navbar-expand-md navbar-light bg-light ">
+    
+    <a class="navbar-brand" routerLink="/">
+        <img src="assets\images\yoka_logo21.jpg" width="150" height="60" alt="Logo aplikacije">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+                <a class="nav-link" style="font-size: 10;" routerLink="/">Početna</a>
+            </li>
+            <li class="nav-item dropdown">
+                <div class="dropdown">
+                    <a class="nav-link" routerLink="/artikli">Artikli <span class="caret"></span></a>
+                    <div class="dropdown-content">
+                        <a href="#">Stolice</a>
+                        <a href="#">Komode</a>
+                        <a href="#">Stolovi</a>
+                        <a href="#">Ostali artikli</a>
+                    </div>
+                </div>
+            </li>
+            <li ngbDropdown  class="nav-item dropdown">
+                <a ngbDropdownToggle class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown
+                </a>
+                <div ngbDropdownMenu class="dropdown-menu " aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+            <li class="nav-item ">
+                <a class="nav-link" routerLink="/oNama">O nama</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" style="border-right-width: 0px;" routerLink="/blog">Blog</a>
+            </li>
+            <li class="nav-item ">
+                <button class="btn  cart " routerLink="/korpa">
+                    <mat-icon matBadge="0" aria-hidden="false" aria-label="Korpa">shopping_cart</mat-icon>
+                </button>
+            </li>
+            <li class="nav-item ">
+                <div class="dropdown">
+                    <a class="btn dropbtn-nalog " >
+                        <mat-icon>account_circle</mat-icon>
+                        
+                    </a>
+                        <div class="dropdown-content account">
+                            <a routerLink="/porudzbine">Porudžbine</a>
+                            <a href="#" class="logOut">Log out</a>
+                            
+                        </div>
+                    
+                </div>
+            </li>
+
+        </ul>
+
+-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+            
+            <a class="navbar-brand" routerLink="/">
+                <img src="assets\images\yoka_logo21.jpg" width="150" height="60" alt="Logo aplikacije">
+            </a>
+          
+            <!-- Step 3: Toggle the value of the property when the toggler button is clicked. -->
+            <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+              &#9776;
+            </button>
+          
+            <!-- Step 2: Add the ngbCollapse directive to the element below. -->
+            <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+              <ul class="navbar-nav ml-auto">
+                
+                <li class="nav-item active">
+                  <!-- Step 4: Close the menu when a link is clicked. -->
+                  <a class="nav-link" routerLink="/" (click)="isMenuCollapsed = true"><mat-icon>home</mat-icon> Početna</a>
+                </li>
+                <li ngbDropdown  class="nav-item dropdown">
+                    <a  class="nav-link " routerLink="/artikli" id="navbarDropdown" role="button" >
+                        Artikli
+                    </a>
+                    
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/oNama" (click)="isMenuCollapsed = true">O nama</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/blog" (click)="isMenuCollapsed = true">Blog</a>
+                </li>
+                <li class="nav-item ">
+                    <button class="btn  cart " routerLink="/korpa" >
+                        <mat-icon  aria-hidden="false" aria-label="Korpa">shopping_cart</mat-icon>
+                    </button>
+                </li>
+                <li *ngIf="!isLogIn" class="nav-item">
+                  <a class="nav-link" routerLink="/login" (click)="isMenuCollapsed = true">Login</a>
+                </li>
+                <li *ngIf="isLogIn" ngbDropdown  class="nav-item dropdown" ngbDropdown display="dynamic" placement="bottom-right">
+                    <a ngbDropdownToggle class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <mat-icon>account_circle</mat-icon>
+                    </a>
+                    <div ngbDropdownMenu class="dropdown-menu " aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" routerLink="/admin-uprava">Uprava</a>
+                      
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" (click)="logoput()">Log out</a>
+                    </div>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+        <!--
+        <button class="btn">
+          <mat-icon matBadge="0" aria-hidden="false" aria-label="Example home icon">shopping_cart</mat-icon>
+        </button>
+      
+
+    </div>
+
+</nav>
+-->
+
+
+<!-- Test nav bar angular-->
+

@@ -1,0 +1,26 @@
+<div *ngFor="let artikal of artikli">
+    <div *ngIf="artikal.key == id">
+        <div class="row">
+            <div class="col-md-6">
+
+                <img src="assets\images\komode\{{artikal.slika}}" class="img-fluid" alt="...">
+            </div>
+            <div class="col-md-6">
+                <h1>{{artikal.naziv}}</h1>
+                <p>
+                    {{artikal.opis}}
+                </p>
+                <div class="row">
+                    <div class="col-md-4">Visina: {{artikal.visina}} cm</div>
+                    <div class="col-md-4">Širina: {{artikal.sirina}} cm</div>
+                    <div class="col-md-4">Dubina: {{artikal.dubina}} cm</div>
+                </div>
+
+                <button type="button"
+                 (click)="addToCart(artikal)"
+                class="btn btn-primary btn-lg btn-block">Dodaj u korpu | {{artikal.cena}}€</button>
+               
+            </div>
+        </div>
+    </div>
+</div>

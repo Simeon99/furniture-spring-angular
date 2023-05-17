@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col">
+    <ngb-carousel #carousel [interval]="5000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus"
+      (slide)="onSlide($event)">
+      <ng-template ngbSlide *ngFor="let img of images; index as i">
+        <div class="carousel-caption">
+          <h1>{{titles[i]}}</h1>
+        </div>
+        <a href="assets\images\slider+{{i+1}}.jpg" target="_blank" rel="nofollow noopener noreferrer">
+          <div class="picsum-img-wrapper">
+            <img style="object-fit: cover; " width="100%" [src]="img" alt="My image {{i + 1}} description">
+          </div>
+        </a>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+</div>
+
+<div class="row red1">
+  <div class="col-md-6  col-sm-12">
+    
+    <img src="assets\images\GIF.gif" alt="this slowpoke moves" width=100% />
+  </div>
+  <div class="col-md-6  col-sm-12 opis-slike">
+    
+    <h1 class="naslovKomode">Novo u ponudi</h1>
+    <p class="text-gif">
+      
+      Komode sa klizom vratima su veoma praktični
+        i moderne za opremanje vašeg enteriera po najmodernijem standardu.
+        Komode se izradjuju u više dimenzija, boja. Sve što trebate uraditi
+        jeste odabrati komodu po svojoj meri i ukusu i poručiti je online
+        ili direktno preko kontakta.
+      
+    </p>
+    <div class="slikaBeleKomode">
+      <img src="assets\images\belaKomoda.jpg" alt="Slika bele komode" width=70% />
+    </div>
+  </div>
+</div>

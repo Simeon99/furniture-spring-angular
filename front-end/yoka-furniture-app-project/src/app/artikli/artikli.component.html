@@ -1,0 +1,60 @@
+<div class="row kartica">
+
+    
+    <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let namestaj of listaKomoda; index as i;" style="margin-bottom: 10px;"> 
+        
+        <div class="card">
+          <img class="card-img-top" src="assets\images\komode\{{namestaj.slika}}" alt="Card image cap">
+
+            <div class="card-body">
+              <h2 class="card-title">{{namestaj.naziv}} </h2>
+              <p class="card-text">
+                {{namestaj.opis}}
+                
+              </p>
+              <hr class="style1">
+              <div class="row">
+                <div class="col-md-6 col-sm-12">
+                  <p class="text-justify">Visina: {{namestaj.visina}}cm</p>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <p class="text-justify">Širina: {{namestaj.sirina}}cm</p>
+                </div>
+                <div class=" col-md-6 col-sm-12">
+                  <p class="text-justify">Dubina: {{namestaj.dubina}}cm</p>
+                </div>
+              </div>
+              
+              
+              
+            </div>
+            <div class="card-footer bg-transparent "><button href="#" class="btn btn-primary btn-lg btn-block"  [routerLink]="['/pregledNamestaja/',namestaj.key ]">{{namestaj.cena}} €</button></div>
+          </div>
+
+    </div>
+</div>
+
+<div class="row ">
+
+    
+  <div class="col-md-4 col-sm-12" *ngFor="let namestaj of listaStolica; index as i;"> 
+      
+      <div class="card">
+          <img
+            src="https://mdbootstrap.com/img/new/standard/city/041.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{namestaj.payload.val()}}</h5>
+            <p class="card-text">
+              This is a longer card with supporting text below as a natural lead-in to
+              additional content. This content is a little bit longer.
+              
+            </p>
+          </div>
+          <div class="card-footer bg-transparent "><a href="#" class="btn btn-primary">Go somewhere</a></div>
+        </div>
+
+  </div>
+</div>

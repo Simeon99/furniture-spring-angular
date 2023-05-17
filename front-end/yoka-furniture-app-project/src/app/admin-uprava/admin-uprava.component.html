@@ -1,0 +1,163 @@
+<form>
+
+   
+    <div class="form-group">
+        <label for="exampleInputEmail1">Naziv</label>
+        <input type="text" class="form-control" [(ngModel)]="naziv" name="naziv" id="exampleInputEmail1"
+            aria-describedby="emailHelp" placeholder="Naziv">
+
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Opis</label>
+        <input type="text" class="form-control" [(ngModel)]="opis" name="opis" id="exampleInputEmail1"
+            aria-describedby="emailHelp" placeholder="Opis">
+
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Cena</label>
+        <input type="number" class="form-control" [(ngModel)]="cena" name="cena" id="exampleInputEmail1"
+            aria-describedby="emailHelp" placeholder="Cena">
+
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Šifina</label>
+        <input type="number" class="form-control" [(ngModel)]="sirina" name="sifra" id="exampleInputEmail1"
+            aria-describedby="emailHelp" placeholder="Šifra">
+
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Visina</label>
+        <input type="number" class="form-control" [(ngModel)]="visina" name="visina" id="exampleInputEmail1"
+            aria-describedby="emailHelp" placeholder="Visina">
+
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Dubina</label>
+        <input type="number" class="form-control" [(ngModel)]="dubina" name="dubina" id="exampleInputEmail1"
+            aria-describedby="emailHelp" placeholder="Dubina">
+
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Slika</label>
+        <input type="text" class="form-control" [(ngModel)]="slika" name="slika" id="exampleInputEmail1"
+            aria-describedby="emailHelp" placeholder="Slika">
+
+    </div>
+    <button type="submit" class="btn btn-success" (click)="createArtikal()">Create</button>
+
+</form>
+
+<div class="row ">
+
+
+    <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let namestaj of listaKomoda; index as i;"
+        style="margin-bottom: 10px;">
+
+        
+
+        <div class="card" *ngIf="!namestaj.isEdited; else elseBloc">
+            <img class="card-img-top" src="assets\images\komode\{{namestaj.slika}}" alt="Card image cap">
+
+            <div class="card-body">
+                <h2 class="card-title">{{namestaj.naziv}} </h2>
+                <p class="card-text">
+                    {{namestaj.opis}}
+                    {{namestaj.isEdited}}
+
+                </p>
+                <hr class="style1">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <p class="text-justify">Visina: {{namestaj.visina}}cm</p>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <p class="text-justify">Širina: {{namestaj.sirina}}cm</p>
+                    </div>
+                    <div class=" col-md-6 col-sm-12">
+                        <p class="text-justify">Dubina: {{namestaj.dubina}}cm</p>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="card-footer bg-transparent ">
+                <button href="#" (click)="editArtikal(namestaj)" class="btn btn-primary btn-lg btn-block">Edit</button>
+                <button href="#" (click)="deleteArtikal(namestaj.key)"
+                    class="btn btn-danger btn-lg btn-block">Delete</button>
+
+
+            </div>
+        </div>
+
+        <ng-template #elseBloc>
+
+            <div class="card">
+                <img class="card-img-top" src="assets\images\komode\{{namestaj.slika}}" alt="Card image cap">
+    
+                <div class="card-body">
+                    <h2 class="card-title">Edit: {{namestaj.naziv}} </h2>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label >Naziv</label>
+                                <input type="text" [(ngModel)]="namestaj.naziv" name="naziv" class="form-control">
+                            </div>
+                                <div class="col-md-12">
+                                    <label >Opis</label>
+                                    <input type="text" [(ngModel)]="namestaj.opis" name="opis" class="form-control">
+                                </div>
+                        
+                                <div class="col-md-12">
+                                    <label >Cena</label>
+                                    <input type="number" [(ngModel)]="namestaj.cena" name="cena" class="form-control">
+                                </div>
+                            
+                        
+                                <div class="col-md-12">
+                                    <label >Širina</label>
+                                    <input type="number" [(ngModel)]="namestaj.sirina" name="sirina" class="form-control">
+                                </div>
+                            
+                        
+                                <div class="col-md-12">
+                                    <label >Visina</label>
+                                    <input type="number" [(ngModel)]="namestaj.visina" name="visina" class="form-control">
+                                </div>
+                            
+                        
+                                <div class="col-md-12">
+                                    <label >Dubina</label>
+                                    <input type="number"[(ngModel)]="namestaj.dubina" name="dubina" class="form-control">
+                                </div>
+                            
+                        
+                                <div class="col-md-12">
+                                    <label >Sika</label>
+                                    <input type="text"[(ngModel)]="namestaj.slika" name="slika" class="form-control">
+                                </div>
+                            
+                        </div>
+                    </div>
+                    
+                        
+                    
+                    
+    
+    
+    
+                </div>
+                <div class="card-footer bg-transparent ">
+                    <button href="#" (click)="updateArtikal(namestaj)" class="btn btn-primary btn-lg btn-block">Update artikal</button>
+                    <button href="#" (click)="namestaj.isEdited = fales"
+                        class="btn btn-danger btn-lg btn-block">Cancel</button>
+    
+    
+                </div>
+            </div>
+
+        </ng-template>
+
+
+    </div>
+</div>
